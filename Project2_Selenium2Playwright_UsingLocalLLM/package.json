@@ -1,0 +1,29 @@
+{
+  "name": "selenium-to-playwright-converter",
+  "version": "1.0.0",
+  "description": "Convert Selenium Java (TestNG) code to Playwright JavaScript/TypeScript using local LLM",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test:connection": "node tools/test-ollama-connection.js"
+  },
+  "keywords": [
+    "selenium",
+    "playwright",
+    "converter",
+    "testng",
+    "ollama",
+    "llm"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
