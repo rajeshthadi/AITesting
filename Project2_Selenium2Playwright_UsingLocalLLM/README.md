@@ -154,7 +154,30 @@ Get sample Selenium code
 - `Assert.assertTrue(x)` → `expect(x).toBeTruthy()`
 - `Assert.assertFalse(x)` → `expect(x).toBeFalsy()`
 
-## 🏗️ Architecture
+## 🏗️ Architecture & Workflow
+
+### 🔄 Functionality Flow
+```mermaid
+graph TD
+    A[User Input: Selenium Java] --> B[Frontend: app.js]
+    B --> C[Backend API: server.js]
+    C --> D{Converter Engine}
+    
+    D --> E[Try LLM: codellama:7b]
+    E --> F{Response in < 30s?}
+    
+    F -- Yes --> G[Return AI Converted Code]
+    F -- No / Error --> H[Fallback: Rule-Based Engine]
+    
+    H --> I[Deterministic Patterns]
+    I --> J[Return Rule-Based Code]
+    
+    G --> K[Frontend UI]
+    J --> K
+    
+    K --> L[High-Contrast Syntax Highlighting]
+    K --> M[Line Numbers & Sync Scroll]
+```
 
 This project follows the **B.L.A.S.T.** protocol with **A.N.T.** 3-layer architecture:
 
